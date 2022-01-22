@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "Hash": "GL5zrvOAlZBzww0xb6P9T6zHunEaItO+v4jJnVJswvQ=",
+  "Source": "Funday.Presale.API",
+  "BasePath": "_content/Funday.Presale.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Funday.Presale.API\\wwwroot",
+      "Source": "Funday.Presale.API",
+      "ContentRoot": "C:\\智擎科技\\Git\\Funday.Presale.API\\Funday.Presale.API\\wwwroot\\",
+      "BasePath": "_content/Funday.Presale.API",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\智擎科技\\Git\\Funday.Presale.API\\Funday.Presale.API\\wwwroot\\assests\\css\\theme-flattop.css",
+      "SourceId": "Funday.Presale.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\智擎科技\\Git\\Funday.Presale.API\\Funday.Presale.API\\wwwroot\\",
+      "BasePath": "_content/Funday.Presale.API",
+      "RelativePath": "assests/css/theme-flattop.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assests\\css\\theme-flattop.css"
+    },
+    {
+      "Identity": "C:\\智擎科技\\Git\\Funday.Presale.API\\Funday.Presale.API\\wwwroot\\assests\\css\\theme-material.css",
+      "SourceId": "Funday.Presale.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\智擎科技\\Git\\Funday.Presale.API\\Funday.Presale.API\\wwwroot\\",
+      "BasePath": "_content/Funday.Presale.API",
+      "RelativePath": "assests/css/theme-material.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assests\\css\\theme-material.css"
+    },
+    {
+      "Identity": "C:\\智擎科技\\Git\\Funday.Presale.API\\Funday.Presale.API\\wwwroot\\assests\\css\\theme-monokai.css",
+      "SourceId": "Funday.Presale.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\智擎科技\\Git\\Funday.Presale.API\\Funday.Presale.API\\wwwroot\\",
+      "BasePath": "_content/Funday.Presale.API",
+      "RelativePath": "assests/css/theme-monokai.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assests\\css\\theme-monokai.css"
+    }
+  ]
+}

@@ -1,0 +1,1274 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Funday.Presale.API</name>
+    </assembly>
+    <members>
+        <member name="M:Funday.Presale.API.Configure.AppConfigureServices.Build(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            配置服務
+            </summary>
+            <param name="services"></param>
+            <param name="configuration"></param>
+        </member>
+        <member name="T:Funday.Presale.API.Controllers.ApiBaseController`1">
+            <summary>
+            基礎控制器
+            </summary>
+            <typeparam name="TDefaultService"></typeparam>
+        </member>
+        <member name="T:Funday.Presale.API.Controllers.ApiBaseController">
+            <summary>
+            基礎控制器
+            </summary>
+        </member>
+        <member name="M:Funday.Presale.API.Controllers.ApiBaseController.Result(Funday.Presale.API.Infrastructure.ApiResultManage.ApiResult.ApiResultCodeEnum,System.String,System.Object)">
+            <summary>
+            回傳資料
+            </summary>
+            <param name="apiResultCodeEnum"></param>
+            <param name="message"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Controllers.ApiBaseController.Result(System.Int32,System.String,System.Object)">
+            <summary>
+            回傳資料
+            </summary>
+            <param name="code"></param>
+            <param name="message"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Controllers.ApiBaseController.ResultOk(System.String)">
+            <summary>
+            回傳訊息
+            </summary>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Controllers.ApiBaseController.ResultOk(System.Object)">
+            <summary>
+            回傳資料
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Controllers.ApiBaseController.ResultOk(System.String,System.Object,System.Object)">
+            <summary>
+            回傳訊息和資料
+            </summary>
+            <param name="message"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Controllers.ApiBaseController.ResultWarn(System.String)">
+            <summary>
+            回傳訊息
+            </summary>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Controllers.ApiBaseController.ResultWarn(System.Object)">
+            <summary>
+            回傳資料
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Controllers.ApiBaseController.ResultWarn(System.String,System.Object)">
+            <summary>
+            回傳訊息和資料
+            </summary>
+            <param name="message"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Funday.Presale.API.Controllers.ArticleController">
+            <summary>
+            文章控制器
+            </summary>
+        </member>
+        <member name="M:Funday.Presale.API.Controllers.ArticleController.#ctor(Funday.Presale.API.Service.Interface.IArticle)">
+            <summary>
+            
+            </summary>
+            <param name="service"></param>
+        </member>
+        <member name="M:Funday.Presale.API.Controllers.ArticleController.GetArticle(System.Int32)">
+            <summary>
+            取得 News
+            </summary>
+            <param name="articleId">文章ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Controllers.ArticleController.UpdateMemberRecording(System.Int32,System.Int32,System.String)">
+            <summary>
+            更新文章錄音紀錄
+            </summary>
+            <param name="customer_id">客戶ID</param>
+            <param name="member_id">會員ID</param>
+            <param name="fromRecordingJson">錄音紀錄JSON</param>
+            <remarks>
+            錄音紀錄JSON 範例 :
+            <pre>
+            {
+                "articleId":20739,
+                "recording":[
+                    {
+                        "filename":"411-488125-20739-1.mp3",
+                        "row":"1"
+                    },
+                    {
+                        "filename":"411-488125-20739-2.mp3",
+                        "row":"2"
+                    },
+                    {
+                        "filename":"411-488125-20739-3.mp3",
+                        "row":"3"
+                    },
+                    "createdDate":"2021/12/09 17:25:45",
+                    "modifiedDate":"2021/12/09 17:25:45"
+                ]
+            }
+            </pre>
+            </remarks>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Controllers.ArticleController.UpdateMemberMemobox(System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>
+            更新便利貼
+            </summary>
+            <param name="customer_id">客戶ID</param>
+            <param name="member_id">會員ID</param>
+            <param name="articleId">文章ID</param>
+            <param name="fromMemoboxJson">便利貼Json</param>
+            <remarks>
+            <pre>
+            便利貼JSON 範例 :
+            [
+                {
+                    "id":"memo1",,
+                    "text":"XXXX",
+                    "basicid2":"Nct2-80",
+                    "basicid1":"ct2-80"
+                },
+                {
+                    "id":"memo2",
+                    "text":"GOD",
+                    "basicid2":"Nt2-14",
+                    "basicid1":"t2-14"
+                }
+            ]
+            </pre>
+            </remarks>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Controllers.ArticleController.UpdateWordsCollect(System.Int32,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            更新會員單字收錄
+            </summary>
+            <param name="customer_id">客戶ID</param>
+            <param name="member_id"></param>
+            <param name="articleId">文章ID</param>
+            <param name="enWord">英文單字</param>
+            <param name="chWord">中文說明</param>
+            <returns></returns>
+        </member>
+        <member name="T:Funday.Presale.API.Controllers.CustomerController">
+            <summary>
+            客戶相關的API
+            </summary>
+        </member>
+        <member name="M:Funday.Presale.API.Controllers.CustomerController.#ctor(Funday.Presale.API.Service.Interface.ICustomer)">
+            <summary>
+            建構子
+            </summary>
+            <param name="service"></param>
+        </member>
+        <member name="M:Funday.Presale.API.Controllers.CustomerController.GetCustomer(Funday.Presale.API.Models.ViewModel.Customer)">
+            <summary>
+            取得客戶資料
+            </summary>
+            <param name="customer"></param>        
+            <remarks>預設取得全部，查詢時帶入編號 or 名稱 or 業務<br/>查詢條件範例：{ "id": 600, "name": "newb2b2", "sales": "kai" }</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Controllers.CustomerController.AddCustomer(Funday.Presale.API.Models.ViewModel.Customer)">
+            <summary>
+            新增客戶
+            </summary>
+            <param name="customer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Controllers.CustomerController.UpdateCustomer(Funday.Presale.API.Models.ViewModel.Customer)">
+            <summary>
+            更新客戶資料
+            </summary>
+            <param name="customer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Controllers.CustomerController.DeleteCustomer(System.Int32)">
+            <summary>
+            刪除客戶
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Controllers.CustomerController.StatisticsList(System.String,Funday.Presale.API.Repository.PageBase)">
+            <summary>
+            客戶統計資料
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Funday.Presale.API.Controllers.MemberController">
+            <summary>
+            會員控制器
+            </summary>
+        </member>
+        <member name="M:Funday.Presale.API.Controllers.MemberController.#ctor(Funday.Presale.API.Service.Interface.IMember)">
+            <summary>
+            
+            </summary>
+            <param name="service"></param>
+        </member>
+        <member name="M:Funday.Presale.API.Controllers.MemberController.GetMember(System.Int32,System.Int32)">
+            <summary>
+            取得會員
+            </summary>
+            <param name="customer_id"></param>
+            <param name="member_id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Controllers.MemberController.UpdateArticleLR(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            更新學習紀錄-文章
+            </summary>
+            <param name="customer_id">客戶ID</param>
+            <param name="member_id">會員ID</param>
+            <param name="articleId">文章ID</param>
+            <param name="readType">閱讀模式(文章 = 1 ， 老師講解 = 2)</param>
+            <remarks>每次呼叫這支API都會累積學習分鐘數 + 1</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Controllers.MemberController.UpdateColumnsLR(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            更新學習紀錄-專欄
+            </summary>
+            <param name="customer_id">客戶ID</param>
+            <param name="member_id">會員ID</param>
+            <param name="columnsId">專欄ID</param>
+            <remarks>每次呼叫這支API都會累積學習分鐘數 + 1</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Controllers.MemberController.UpdateStoryLR(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            更新學習紀錄-童話故事
+            </summary>
+            <param name="customer_id">客戶ID</param>
+            <param name="member_id">會員ID</param>
+            <param name="storyId">故事ID</param>
+            <remarks>每次呼叫這支API都會累積學習分鐘數 + 1</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Controllers.MemberController.UpdateVideoLR(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            更新學習紀錄-影片
+            </summary>
+            <param name="customer_id">客戶ID</param>
+            <param name="member_id">會員ID</param>
+            <param name="videoId">影片ID</param>
+            <remarks>每次呼叫這支API都會累積學習分鐘數 + 1</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Controllers.MemberController.UpdateMusicBoxLR(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            更新學習紀錄-音樂盒
+            </summary>
+            <param name="customer_id">客戶ID</param>
+            <param name="member_id">會員ID</param>
+            <param name="musicboxId">音樂盒ID</param>
+            <remarks>每次呼叫這支API都會累積學習分鐘數 + 1</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Controllers.MemberController.UpdateBlogLR(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            更新學習紀錄-部落格
+            </summary>
+            <param name="customer_id">客戶ID</param>
+            <param name="member_id">會員ID</param>
+            <param name="blogId">部落格ID</param>
+            <remarks>每次呼叫這支API都會累積學習分鐘數 + 1</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Controllers.MemberController.GetReviewLR(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            取得會員所有學習紀錄給首頁Review Bar使用
+            </summary>
+            <param name="customer_id">客戶ID</param>
+            <param name="member_id">會員ID</param>
+            <param name="pg">帶入頁數(每一頁皆為一個月份的紀錄)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Controllers.MemberController.複製學習紀錄假資料(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            複製學習紀錄假資料
+            </summary>
+            <param name="customer_id">測試客戶ID = 308</param>
+            <param name="member_id">測試會員ID = 359</param>
+            <param name="fromYear">複製來源哪年</param>
+            <param name="fromMonth">複製來源哪月</param>
+            <param name="setYear">複製後設為哪年</param>
+            <param name="setMonth">複製後設為哪月</param>
+            <remarks>僅限測試客戶用，customer_id=308, member_id=359</remarks>
+            <returns></returns>
+        </member>
+        <member name="T:Funday.Presale.API.Filters.ApiCheckModelAttribute">
+            <summary>
+            對接口模型作驗證
+            </summary>
+        </member>
+        <member name="M:Funday.Presale.API.Filters.ApiCheckModelAttribute.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            每次Action發生前
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Funday.Presale.API.Filters.ApiExceptionFilter">
+            <summary>
+            異常錯誤過濾器
+            </summary>
+        </member>
+        <member name="M:Funday.Presale.API.Filters.ApiExceptionFilter.OnExceptionAsync(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+            重新OnExceptionAsync方法
+            </summary>
+            <param name="context">異常信息</param>
+            <returns></returns>
+        </member>
+        <member name="T:Funday.Presale.API.Filters.ApiResultFilterAttribute">
+            <summary>
+            Api 回傳結果封裝
+            </summary>
+        </member>
+        <member name="M:Funday.Presale.API.Filters.ApiResultFilterAttribute.OnResultExecuting(Microsoft.AspNetCore.Mvc.Filters.ResultExecutingContext)">
+            <summary>
+            回傳結果前
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Funday.Presale.API.Filters.ApiResultFilterAttribute.OnResultExecuted(Microsoft.AspNetCore.Mvc.Filters.ResultExecutedContext)">
+            <summary>
+            回傳結果後
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Funday.Presale.API.Infrastructure.ApiResultManage.ApiResult">
+            <summary>
+            Api 回傳Result類別
+            </summary>
+        </member>
+        <member name="T:Funday.Presale.API.Infrastructure.ApiResultManage.ApiResult.ApiResultCodeEnum">
+            <summary>
+            訊息回傳碼
+            </summary>
+        </member>
+        <member name="F:Funday.Presale.API.Infrastructure.ApiResultManage.ApiResult.ApiResultCodeEnum.NotFount">
+            <summary>
+            接口不存在
+            </summary>
+        </member>
+        <member name="F:Funday.Presale.API.Infrastructure.ApiResultManage.ApiResult.ApiResultCodeEnum.Error">
+            <summary>
+            程式錯誤
+            </summary>
+        </member>
+        <member name="F:Funday.Presale.API.Infrastructure.ApiResultManage.ApiResult.ApiResultCodeEnum.UnAuth">
+            <summary>
+            未授權
+            </summary>
+        </member>
+        <member name="F:Funday.Presale.API.Infrastructure.ApiResultManage.ApiResult.ApiResultCodeEnum.Warn">
+            <summary>
+            警告
+            </summary>
+        </member>
+        <member name="F:Funday.Presale.API.Infrastructure.ApiResultManage.ApiResult.ApiResultCodeEnum.Ok">
+            <summary>
+            成功
+            </summary>
+        </member>
+        <member name="F:Funday.Presale.API.Infrastructure.ApiResultManage.ApiResult.ApiResultCodeEnum.Fail">
+            <summary>
+            失敗
+            </summary>
+        </member>
+        <member name="F:Funday.Presale.API.Infrastructure.ApiResultManage.ApiResult.ApiResultCodeEnum.NoContent">
+            <summary>
+            找不到資料
+            </summary>
+        </member>
+        <member name="F:Funday.Presale.API.Infrastructure.ApiResultManage.ApiResult.ApiResultCodeEnum.LoginOK">
+            <summary>
+            登入成功
+            </summary>
+        </member>
+        <member name="F:Funday.Presale.API.Infrastructure.ApiResultManage.ApiResult.ApiResultCodeEnum.LoginFail">
+            <summary>
+            登入失敗
+            </summary>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.ApiResultManage.ApiResult.ResultMessage(Funday.Presale.API.Infrastructure.ApiResultManage.ApiResult.ApiResultCodeEnum,System.String)">
+            <summary>
+            回傳訊息
+            </summary>
+            <param name="apiResultCodeEnum"></param>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.ApiResultManage.ApiResult.ResultData(Funday.Presale.API.Infrastructure.ApiResultManage.ApiResult.ApiResultCodeEnum,System.Object)">
+            <summary>
+            回傳資料
+            </summary>
+            <param name="apiResultCodeEnum"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.ApiResultManage.ApiResult.Result(Funday.Presale.API.Infrastructure.ApiResultManage.ApiResult.ApiResultCodeEnum,System.String,System.Object,System.Object)">
+            <summary>
+            回傳訊息和資料
+            </summary>
+            <param name="apiResultCodeEnum"></param>
+            <param name="message"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.ApiResultManage.ApiResult.ResultMessage(System.Int32,System.String)">
+            <summary>
+            回傳訊息
+            </summary>
+            <param name="code"></param>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.ApiResultManage.ApiResult.ResultData(System.Int32,System.Object)">
+            <summary>
+            回傳資料
+            </summary>
+            <param name="code"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.ApiResultManage.ApiResult.Result(System.Int32,System.String,System.Object)">
+            <summary>
+            回傳訊息和資料
+            </summary>
+            <param name="code"></param>
+            <param name="message"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.ApiResultManage.ApiResult.OkMessage(System.String)">
+            <summary>
+            回傳成功訊息
+            </summary>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.ApiResultManage.ApiResult.OkData(System.Object)">
+            <summary>
+            回傳成功資料
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.ApiResultManage.ApiResult.Ok(System.String,System.Object,System.Object)">
+            <summary>
+            回傳成功訊息和資料
+            </summary>
+            <param name="message"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.ApiResultManage.ApiResult.WarnMessage(System.String)">
+            <summary>
+            回傳警告訊息
+            </summary>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.ApiResultManage.ApiResult.WarnData(System.Object)">
+            <summary>
+            回傳警告資料
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.ApiResultManage.ApiResult.Warn(System.String,System.Object)">
+            <summary>
+            回傳警告訊息和資料
+            </summary>
+            <param name="message"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Funday.Presale.API.Infrastructure.ApiResultManage.ApiResultData">
+            <summary>
+            Api 回傳資料結果類別
+            </summary>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.ApiResultManage.ApiResultData.Result(Funday.Presale.API.Infrastructure.ApiResultManage.ApiResult.ApiResultCodeEnum,System.String,System.Object)">
+            <summary>
+            回傳Result
+            </summary>
+            <param name="apiResultCodeEnum"></param>
+            <param name="message"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.ApiResultManage.ApiResultData.Result(System.Int32,System.String,System.Object)">
+            <summary>
+            回傳Result
+            </summary>
+            <param name="code"></param>
+            <param name="message"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.ApiResultManage.ApiResultData.ResultOk(System.String)">
+            <summary>
+            回傳Result OK
+            </summary>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.ApiResultManage.ApiResultData.ResultOk(System.Object)">
+            <summary>
+            回傳Result OK
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.ApiResultManage.ApiResultData.ResultOk(System.String,System.Object)">
+            <summary>
+            回傳Result OK 和訊息
+            </summary>
+            <param name="message"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.ApiResultManage.ApiResultData.ResultWarn(System.String)">
+            <summary>
+            回傳訊息
+            </summary>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.ApiResultManage.ApiResultData.ResultWarn(System.Object)">
+            <summary>
+            回傳資料
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.ApiResultManage.ApiResultData.ResultWarn(System.String,System.Object)">
+            <summary>
+            回傳訊息和資料
+            </summary>
+            <param name="message"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Funday.Presale.API.Infrastructure.ApiResultManage.MessageBox">
+            <summary>
+            警告消息
+            </summary>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.ApiResultManage.MessageBox.GetApiResult">
+            <summary>
+            获取 ApiResult
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.ApiResultManage.MessageBox.Show(System.String)">
+            <summary>
+            输出消息
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.ApiResultManage.MessageBox.Show(System.String,System.Object)">
+            <summary>
+            输出消息和数据
+            </summary>
+            <param name="message"></param>
+            <param name="data"></param>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.ApiResultManage.MessageBox.Show(Funday.Presale.API.Infrastructure.ApiResultManage.ApiResult)">
+            <summary>
+            支持传入 ApiResult 对象
+            </summary>
+            <param name="apiResult"></param>
+        </member>
+        <member name="P:Funday.Presale.API.Infrastructure.NLogService.LogMessage.IpAddress">
+            <summary>
+            IP
+            </summary>
+        </member>
+        <member name="P:Funday.Presale.API.Infrastructure.NLogService.LogMessage.OperationName">
+            <summary>
+            操作人
+            </summary>
+        </member>
+        <member name="P:Funday.Presale.API.Infrastructure.NLogService.LogMessage.OperationTime">
+            <summary>
+            操作時間
+            </summary>
+        </member>
+        <member name="P:Funday.Presale.API.Infrastructure.NLogService.LogMessage.LogInfo">
+            <summary>
+            日誌信息
+            </summary>
+        </member>
+        <member name="P:Funday.Presale.API.Infrastructure.NLogService.LogMessage.StackTrace">
+            <summary>
+            追蹤訊息
+            </summary>
+        </member>
+        <member name="T:Funday.Presale.API.Infrastructure.TextJson.DateTimeNullJsonConverter">
+            <summary>
+            Json时间转化器
+            </summary>
+        </member>
+        <member name="T:Funday.Presale.API.Infrastructure.TextJson.FlatJsonConvert">
+            <summary>
+            Flatten nested JSON 
+            { "A":[1,2,3], "B":{"X":4,"Y":5},"C":[{"Z":6},{"Z":7}]}
+            to simple key/value dictionary
+            {"A[0]":1,"A[1]":2,"A[2]": 3,"B.X":4,"B.Y":5,"C[0].Z":6,"C[1].Z":7}
+            </summary>
+        </member>
+        <member name="T:Funday.Presale.API.Infrastructure.Util.Common">
+            <summary>
+            寫一些共用參數的地方
+            </summary>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.Util.Common.GetDescription(System.Type)">
+            <summary>
+            取得物件的[Description]
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Funday.Presale.API.Infrastructure.Util.LevelEnum">
+            <summary>
+            學習等級(score)
+            </summary>
+        </member>
+        <member name="T:Funday.Presale.API.Infrastructure.Util.CustomerUtil">
+            <summary>
+            客戶會用到的相關函式
+            </summary>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.Util.CustomerUtil.GetCustomerRecord(System.Int32,System.Nullable{System.Int32},System.String)">
+            <summary>
+            
+            </summary>
+            <param name="customer_id"></param>
+            <param name="group_id"></param>
+            <param name="year_month"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.Util.CustomerUtil.InitReadRecord(System.Int32,System.Nullable{System.Int32},System.String)">
+            <summary>
+            初始化客戶閱讀篇數紀錄Json
+            </summary>
+            <param name="customer_id"></param>
+            <param name="group_id"></param>
+            <param name="year_month"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.Util.CustomerUtil.InitReadMinutesRecord(System.Int32,System.Nullable{System.Int32},System.String)">
+            <summary>
+            初始化客戶閱讀分鐘數紀錄Json
+            </summary>
+            <param name="customer_id"></param>
+            <param name="group_id"></param>
+            <param name="year_month"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.Util.CustomerUtil.UpdateReadCount(System.Int32,System.Nullable{System.Int32},System.String)">
+            <summary>
+            更新閱讀篇數/月
+            </summary>
+            <param name="customer_id"></param>
+            <param name="group_id"></param>
+            <param name="year_month"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.Util.CustomerUtil.UpdateReadMinutesCount(System.Int32,System.Nullable{System.Int32},System.String)">
+            <summary>
+            更新閱讀分鐘數/月
+            </summary>
+            <param name="customer_id"></param>
+            <param name="group_id"></param>
+            <param name="year_month"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.Util.CustomerUtil.GetReadRecord(System.Int32,System.Nullable{System.Int32},System.String)">
+            <summary>
+            取得閱讀紀錄/月
+            </summary>
+            <param name="customer_id"></param>
+            <param name="group_id"></param>
+            <param name="year_month">年月(空值則取全部)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.Util.CustomerUtil.UpdateReadRecord(System.Int32,System.Nullable{System.Int32},System.String,System.String)">
+            <summary>
+            更新閱讀紀錄/月
+            </summary>
+            <param name="customer_id"></param>
+            <param name="group_id"></param>
+            <param name="year_month"></param>
+            <param name="readJson"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.Util.CustomerUtil.GetReadMinutesRecord(System.Int32,System.Nullable{System.Int32},System.String)">
+            <summary>
+            取得閱讀分鐘數紀錄/月
+            </summary>
+            <param name="customer_id"></param>
+            <param name="group_id"></param>
+            <param name="year_month">年月(空值則取全部)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.Util.CustomerUtil.UpdateReadMinutesRecord(System.Int32,System.Nullable{System.Int32},System.String,System.String)">
+            <summary>
+            更新閱讀分鐘數紀錄/月
+            </summary>
+            <param name="customer_id"></param>
+            <param name="group_id"></param>
+            <param name="year_month"></param>
+            <param name="readJson"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Funday.Presale.API.Infrastructure.Util.MemberUtil">
+            <summary>
+            會員所用到的相關函式
+            </summary>
+        </member>
+        <member name="T:Funday.Presale.API.Infrastructure.Util.StringExtensions">
+            <summary>
+            一些字元處裡的擴充類別
+            </summary>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.Util.StringExtensions.IsMatch(System.String,System.String,System.Boolean)">
+            <summary>
+            使用RegularExpression在指定的字串是否有符合的項目
+            </summary>
+            <param name="value">來源字串</param>
+            <param name="pattern">正則運算式</param>
+            <param name="isContains">是否只是要包含而已，否則就是要全部準確符合</param>
+            <returns>如果有符合就回傳 true</returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.Util.StringExtensions.Match(System.String,System.String)">
+            <summary>
+            回傳在正則運算式符合的第一個項目字串
+            </summary>
+            <param name="value">來源字串</param>
+            <param name="pattern">正則運算式</param>
+            <returns>回傳第一個有符合的項目</returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.Util.StringExtensions.Matches(System.String,System.String)">
+            <summary>
+            在指定的輸入字元串中搜索指定的正則表達式的所有符合的字元集合
+            </summary>
+            <param name="value">來源字串</param>
+            <param name="pattern">正則運算式</param>
+            <returns>回傳符合的字串集合</returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.Util.StringExtensions.IsMatchNumber(System.String)">
+            <summary>
+            判斷字串裡面是否有數字
+            </summary>
+            <param name="value">來源字串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.Util.StringExtensions.IsMatchNumber(System.String,System.Int32)">
+            <summary>
+            判斷字串裡面是否有數字，並且長度為指定的長度
+            </summary>
+            <param name="value">來源字串</param>
+            <param name="length">指定長度</param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.Util.StringExtensions.IsEmail(System.String)">
+            <summary>
+            是否為電子郵件
+            </summary>
+            <param name="value">來源字串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.Util.StringExtensions.IsIpAddress(System.String)">
+            <summary>
+            是否為IP Address
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.Util.StringExtensions.IsNumeric(System.String)">
+            <summary>
+            是否為整數
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.Util.StringExtensions.IsUnicode(System.String)">
+            <summary>
+            是否是Unicode字串
+            </summary>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.Util.StringExtensions.IsUrl(System.String)">
+            <summary>
+            是否為Url字串
+            </summary>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.Util.StringExtensions.IsNullOrEmpty(System.String)">
+            <summary>
+            指定的字符串是 null 還是 System.String.Empty 字串
+            </summary>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.Util.StringExtensions.IsNull(System.String)">
+            <summary>
+            判斷字串是否為Null或是空白
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.Util.StringExtensions.NotNull(System.String)">
+            <summary>
+            判斷字串是否不為Null或空白
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.Util.StringExtensions.EqualsIgnoreCase(System.String,System.String)">
+            <summary>
+            比較兩個字串是否相等，忽略大小寫
+            </summary>
+            <param name="s1"></param>
+            <param name="s2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.Util.StringExtensions.IsImageFile(System.String)">
+            <summary>
+            判斷檔案是否為圖片
+            </summary>
+            <param name="filename"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.Util.StringExtensions.TextLength(System.String)">
+            <summary>
+            支援中文長度或全形，中文長度是2
+            </summary>
+            <param name="value">來源字串</param>
+            <returns>回傳字串長度，中文或全形長度是2</returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.Util.StringExtensions.AddUrlQuery(System.String,System.String[])">
+            <summary>
+            給URL增加查詢參數
+            </summary>
+            <param name="url">URL字串</param>
+            <param name="queries">要添加的參數如："id=1,cid=2"</param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.Util.StringExtensions.GetUrlQuery(System.String,System.String)">
+            <summary>
+            取得URL的參數值，沒有的話就回傳空字串
+            </summary>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.Util.StringExtensions.ToBytes(System.String,System.Text.Encoding)">
+            <summary>
+            將字符串轉換byte[]，預設編碼Encoding.UTF8
+            </summary>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.Util.StringExtensions.ToString(System.Byte[],System.Text.Encoding)">
+            <summary>
+            將byte[]轉換為字串，預設編碼Encoding.UTF8
+            </summary>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.Util.StringExtensions.ToLong(System.String)">
+            <summary>
+            將字串轉換Long型態
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.Util.StringExtensions.ToMD5String(System.String)">
+            <summary>
+            將字串轉換為MD5加密（Intranet 一樣方式）
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.Util.StringExtensions.AesEncrypt(System.String)">
+            <summary>
+            AES加密
+            </summary>
+            <param name="toEncrypt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.Util.StringExtensions.AesDecrypt(System.String)">
+            <summary>
+            AES解密
+            </summary>
+            <param name="toDecrypt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.Util.StringExtensions.ToInt(System.String)">
+            <summary>
+            string轉int
+            </summary>
+            <param name="str">字串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.Util.StringExtensions.ToObject``1(System.String)">
+            <summary>
+            將Json字串反序列化為物件
+            </summary>
+            <typeparam name="T">物件類型</typeparam>
+            <param name="jsonStr">Json字串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.Util.StringExtensions.ToObject(System.String,System.Type)">
+            <summary>
+            將Json字串反序列化為物件
+            </summary>
+            <param name="jsonStr">Json字串</param>
+            <param name="type">物件類型</param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.Util.StringExtensions.XmlStrToObject``1(System.String)">
+            <summary>
+            將XML字串反序列化為物件
+            </summary>
+            <typeparam name="T">物件類型</typeparam>
+            <param name="xmlStr">XML字串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.Util.StringExtensions.XmlStrToJObject(System.String)">
+            <summary>
+            將XML字串反序列化為JObject
+            </summary>
+            <param name="xmlStr">XML字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.Util.StringExtensions.ToList``1(System.String)">
+            <summary>
+            將Json字串轉換為 List'T'
+            </summary>
+            <typeparam name="T">物件類型</typeparam>
+            <param name="jsonStr">Json字串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.Util.StringExtensions.ToDataTable(System.String)">
+            <summary>
+            將Json字串轉換DataTable
+            </summary>
+            <param name="jsonStr">Json字串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.Util.StringExtensions.ToJObject(System.String)">
+            <summary>
+            將将Json字串轉為JObject
+            </summary>
+            <param name="jsonStr">Json字串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Infrastructure.Util.StringExtensions.ToJArray(System.String)">
+            <summary>
+            將Json字串轉為JArray
+            </summary>
+            <param name="jsonStr">Json字串</param>
+            <returns></returns>
+        </member>
+        <member name="T:Funday.Presale.API.Models.LearningRecord">
+            <summary>
+            學習紀錄
+            </summary>
+        </member>
+        <member name="T:Funday.Presale.API.Models.Memobox">
+            <summary>
+            便利貼
+            </summary>
+        </member>
+        <member name="T:Funday.Presale.API.Models.RecordingRecord">
+            <summary>
+            文章錄音紀錄
+            </summary>
+        </member>
+        <member name="T:Funday.Presale.API.Models.ViewModel.Review">
+            <summary>
+            首頁右邊的Review Bar 列出學習紀錄清單用
+            </summary>
+        </member>
+        <member name="T:Funday.Presale.API.Models.WeeklyTestRecord">
+            <summary>
+            週測紀錄
+            </summary>
+        </member>
+        <member name="T:Funday.Presale.API.Models.WordsCollect">
+            <summary>
+            單字收入
+            </summary>
+        </member>
+        <member name="T:Funday.Presale.API.Properties.Resources">
+            <summary>
+              用於查詢當地語系化字串等的強類型資源類別。
+            </summary>
+        </member>
+        <member name="P:Funday.Presale.API.Properties.Resources.ResourceManager">
+            <summary>
+              傳回這個類別使用的快取的 ResourceManager 執行個體。
+            </summary>
+        </member>
+        <member name="P:Funday.Presale.API.Properties.Resources.Culture">
+            <summary>
+              覆寫目前執行緒的 CurrentUICulture 屬性，對象是所有
+              使用這個強類型資源類別的資源查閱。
+            </summary>
+        </member>
+        <member name="F:Funday.Presale.API.Repository.DapperBase.ConnectionString">
+            <summary>
+            The connection string
+            </summary>
+        </member>
+        <member name="M:Funday.Presale.API.Repository.DapperBase.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="!:RepositoryBase"/> class.
+            </summary>
+            <param name="connectionString">The connection string.</param>
+        </member>
+        <member name="M:Funday.Presale.API.Repository.DapperBase.OpenConnection">
+            <summary>
+            Opens the connection.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Funday.Presale.API.Repository.PageBase">
+            <summary>
+            分頁查詢
+            </summary>
+        </member>
+        <member name="P:Funday.Presale.API.Repository.PageBase.PageSize">
+            <summary>
+            筆數,預設10
+            </summary>
+        </member>
+        <member name="P:Funday.Presale.API.Repository.PageBase.PageIndex">
+            <summary>
+            頁數,預設1
+            </summary>
+        </member>
+        <member name="P:Funday.Presale.API.Repository.PageBase.OrderBy">
+            <summary>
+            排序欄位
+            </summary>
+        </member>
+        <member name="P:Funday.Presale.API.Repository.PageBase.OrderSequence">
+            <summary>
+            asc | desc
+            </summary>
+        </member>
+        <member name="T:Funday.Presale.API.Repository.SqlBuilder">
+            <summary>
+            From https://github.com/StackExchange/Dapper/tree/master/Dapper.SqlBuilder
+            </summary>
+        </member>
+        <member name="M:Funday.Presale.API.Service.ApiRequestService.RequestAsync(Funday.Presale.API.Service.Interface.RequsetModeEnum,System.String,System.String)">
+            <summary>
+            請求資料
+            </summary>
+            <param name="requsetMode"></param>
+            <param name="apiUrl"></param>
+            <param name="headerKeyValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Service.ArticleService.GetArticle(System.Int32)">
+            <summary>
+            取得文章
+            </summary>
+            <param name="articleId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Service.ArticleService.UpdateMemberRecording(System.Int32,System.Int32,System.String)">
+            <summary>
+            更新文章錄音紀錄
+            </summary>
+            <param name="customer_id"></param>
+            <param name="member_id"></param>
+            <param name="fromRecordingJson"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Service.ArticleService.UpdateMemberMemobox(System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>
+            更新便利貼
+            </summary>
+            <param name="customer_id"></param>
+            <param name="member_id"></param>
+            <param name="articleId"></param>
+            <param name="fromMemoboxJson"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Service.ArticleService.UpdateWordsCollect(System.Int32,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            更新會員單字收錄
+            </summary>
+            <param name="customer_id"></param>
+            <param name="member_id"></param>
+            <param name="articleId"></param>
+            <param name="enWord"></param>
+            <param name="chWord"></param>        
+            <returns></returns>
+        </member>
+        <member name="T:Funday.Presale.API.Service.Interface.RequsetModeEnum">
+            <summary>
+            請求方式
+            </summary>
+        </member>
+        <member name="M:Funday.Presale.API.Service.LoginService.LoginCountAdd(System.Int32,System.String,System.Nullable{System.Int32})">
+            <summary>
+            登入次數記錄
+            </summary>
+            <param name="customer_id"></param>
+            <param name="member_account"></param>
+            <param name="group_id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Service.MailService.SendAsync(MimeKit.MimeMessage,System.String,System.String)">
+            <summary>
+            送信件
+            </summary>
+            <param name="message">主旨與內容</param>
+            <param name="mailTo">收件者(可用 ; 分隔)</param>
+            <param name="mailFrom">寄件者(預設空值會用系統的)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Service.MemberService.UpdateArticleLearningRecord(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            文章學習紀錄更新
+            </summary>
+            <param name="customer_id"></param>
+            <param name="member_id"></param>
+            <param name="articleId"></param>
+            <param name="readType"></param>
+            <param name="recordingFlag"></param>
+            <param name="memoboxFlag"></param>
+            <param name="testFlag"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Service.MemberService.UpdateColumnsLearningRecord(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            專欄學習紀錄更新
+            </summary>
+            <param name="customer_id"></param>
+            <param name="member_id"></param>
+            <param name="columnsId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Service.MemberService.UpdateStoryLearningRecord(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            童話故事學習紀錄更新
+            </summary>
+            <param name="customer_id"></param>
+            <param name="member_id"></param>
+            <param name="storyId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Service.MemberService.UpdateVideoLearningRecord(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            影音學習紀錄更新
+            </summary>
+            <param name="customer_id"></param>
+            <param name="member_id"></param>
+            <param name="videoId"></param>
+            <param name="recordingFlag"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Service.MemberService.UpdateMusicBoxLearningRecord(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            音樂盒學習紀錄更新
+            </summary>
+            <param name="customer_id"></param>
+            <param name="member_id"></param>
+            <param name="musicboxId"></param>
+            <param name="singFlag"></param>
+            <param name="singFileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Service.MemberService.UpdateBlogLearningRecord(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            部落格學習紀錄更新
+            </summary>
+            <param name="customer_id"></param>
+            <param name="member_id"></param>
+            <param name="blogId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Service.MemberService.InitLearningTime(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            初始化一筆本月學習紀錄，如果已經存在就回傳資料
+            </summary>
+            <param name="customer_id"></param>
+            <param name="member_id"></param>
+            <param name="year"></param>
+            <param name="month"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Service.MemberService.UpdateLearningRecord(System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.Int32)">
+            <summary>
+            更新整份學習紀錄
+            </summary>
+            <param name="customer_id"></param>
+            <param name="member_id"></param>
+            <param name="year"></param>
+            <param name="month"></param>
+            <param name="origJson"></param>
+            <param name="readCountType">(1=更新閱讀篇數+1, 2=更新閱讀分鐘數+1, 3=兩個都各+1)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Service.MemberService.UpdateCustomerRead(System.Int32,System.Nullable{System.Int32},System.String,System.String,System.Int32)">
+            <summary>
+            更新客戶相關統計數(閱讀篇數、分鐘數、閱讀紀錄、閱讀分鐘紀錄)
+            </summary>
+            <param name="customer_id"></param>
+            <param name="group_id"></param>
+            <param name="year_month"></param>
+            <param name="classly"></param>
+            <param name="readCountType">更新模式(1=閱讀篇數, 2=閱讀分鐘數, 3=兩個都更新)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Service.MemberService.GetLearningRecordForReview(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            取得會員所有學習紀錄給首頁Review Bar使用
+            </summary>
+            <param name="customer_id"></param>
+            <param name="member_id"></param>
+            <param name="pg">頁數</param>
+            <returns></returns>
+        </member>
+        <member name="M:Funday.Presale.API.Service.MemberService.CopyLearningRecord(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            產生假資料(測試用)
+            </summary>
+            <param name="customer_id"></param>
+            <param name="member_id"></param>
+            <param name="fromYear"></param>
+            <param name="fromMonth"></param>
+            <param name="setYear"></param>
+            <param name="setMonth"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
